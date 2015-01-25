@@ -1,0 +1,35 @@
+{
+  "name": "webhooked-ui",
+  "version": "0.0.1",
+  "description": "Frontend for webhooked",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "config": {
+    "travis-cov": {
+      "threshold": 0
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cosmosgenius/webhooked-ui.git"
+  },
+  "keywords": [
+    "webhooked"
+  ],
+  "author": "Sharat M R <cosmosgenius@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/cosmosgenius/webhooked-ui/issues"
+  },
+  "homepage": "https://github.com/cosmosgenius/webhooked-ui",
+  "devDependencies": {
+    "grunt": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-env": "*",
+    "grunt-mocha-test": "*",
+    "mocha": "*"
+  }
+}
