@@ -3,6 +3,4 @@ node_js:
     - iojs
 before_install: npm install -g grunt-cli
 install: npm install
-services:
-    - mongodb
 after_script: "npm install coveralls && cat ./lcov.info | coveralls"
