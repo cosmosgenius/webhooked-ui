@@ -6,7 +6,6 @@ module.exports = function(grunt) {
         env : {
             dev : {
                 NODE_ENV : "development",
-                DEBUG: "webhooked:*"
             },
             test : {
                 NODE_ENV : "test",
