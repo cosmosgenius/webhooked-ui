@@ -4,7 +4,7 @@
   "description": "Frontend for webhooked",
   "main": "index.js",
   "scripts": {
-    "test": "grunt test"
+    "test": "gulp test"
   },
   "config": {
     "travis-cov": {
@@ -26,10 +26,11 @@
   },
   "homepage": "https://github.com/cosmosgenius/webhooked-ui",
   "devDependencies": {
-    "grunt": "*",
-    "grunt-contrib-watch": "*",
-    "grunt-env": "*",
-    "grunt-mocha-test": "*",
+    "browser-sync": "*",
+    "gulp": "*",
+    "gulp-autoprefixer": "*",
+    "gulp-sass": "*3",
+    "gulp-sourcemaps": "*",
     "mocha": "*"
   }
 }
