@@ -29,6 +29,8 @@
     "browser-sync": "*",
     "gulp": "*",
     "gulp-autoprefixer": "*",
+    "gulp-babel": "^5.0.0",
+    "gulp-inject": "^1.2.0",
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
     "mocha": "*"
