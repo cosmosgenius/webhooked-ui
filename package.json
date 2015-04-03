@@ -29,7 +29,7 @@
     "browser-sync": "*",
     "gulp": "*",
     "gulp-autoprefixer": "*",
-    "gulp-sass": "*3",
+    "gulp-sass": "3",
     "gulp-sourcemaps": "*",
     "mocha": "*"
   }
