@@ -15,6 +15,10 @@ var src = {
     html: 'app/index.html'
 };
 
+var libs = [
+    'app/libs/react.js'
+];
+
 gulp.task('serve', ['sass','index'], function() {
     browserSync({
         server: {
@@ -32,8 +36,9 @@ gulp.task('serve', ['sass','index'], function() {
 
 gulp.task('index', ['sass'], function () {
     var target = gulp.src('app/index.html');
+    var sourcearray = libs.concat(['app/js/app.js', 'app/css/*.css']);
     var sources = gulp.src(
-        ['app/js/app.js', 'app/css/*.css'],
+        sourcearray,
         {read: false}
     );
 
