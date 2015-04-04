@@ -61,7 +61,7 @@ gulp.task('index', ['sass','js'], function () {
 
 gulp.task('js', function() {
     var b = browserify({
-        entries: './app/src/app.js',
+        entries: './app/src/app.jsx',
         debug: true
     });
     return b.transform(babelify)
