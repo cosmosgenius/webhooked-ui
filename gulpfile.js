@@ -2,6 +2,10 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var inject = require('gulp-inject');
+var babelify = require('babelify');
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync');
@@ -36,7 +40,7 @@ gulp.task('serve', ['sass','index'], function() {
 
 gulp.task('index', ['sass'], function () {
     var target = gulp.src('app/index.html');
-    var sourcearray = libs.concat(['app/js/app.js', 'app/css/*.css']);
+    var sourcearray = libs.concat(['app/app.js', 'app/css/*.css']);
     var sources = gulp.src(
         sourcearray,
         {read: false}
@@ -49,6 +53,18 @@ gulp.task('index', ['sass'], function () {
         }
     ))
     .pipe(gulp.dest('app'));
+});
+
+gulp.task('js', function() {
+    var b = browserify({
+        entries: './app/src/app.js',
+        debug: true
+    });
+    return b.transform(babelify)
+            .bundle()
+            .pipe(source('app.js'))
+            .pipe(buffer())
+            .pipe(gulp.dest('app'));
 });
 
 gulp.task('sass', function() {

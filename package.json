@@ -26,13 +26,19 @@
   },
   "homepage": "https://github.com/cosmosgenius/webhooked-ui",
   "devDependencies": {
+    "babelify": "^6.0.1",
     "browser-sync": "*",
+    "browserify": "^9.0.7",
     "gulp": "*",
     "gulp-autoprefixer": "*",
     "gulp-babel": "^5.0.0",
     "gulp-inject": "^1.2.0",
     "gulp-sass": "*",
     "gulp-sourcemaps": "*",
-    "mocha": "*"
+    "mocha": "*",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0",
+    "watchify": "^3.1.0"
   }
 }
