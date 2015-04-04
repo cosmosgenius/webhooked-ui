@@ -16,6 +16,7 @@ var PORT = 8888;
 var src = {
     sass: 'app/scss/*.scss',
     css:  'app/css',
+    js: ['app/src/**/*.js', 'app/src/**/*.jsx'],
     html: 'app/index.html'
 };
 
@@ -23,7 +24,7 @@ var libs = [
     'app/libs/react.js'
 ];
 
-gulp.task('serve', ['sass','index'], function() {
+gulp.task('serve', ['index'], function() {
     browserSync({
         server: {
             baseDir: './app'
@@ -35,10 +36,13 @@ gulp.task('serve', ['sass','index'], function() {
         }
     });
     gulp.watch(src.sass, ['sass']);
+    gulp.watch(src.js, ['js-watch']);
     gulp.watch(src.html).on('change', reload);
 });
 
-gulp.task('index', ['sass'], function () {
+gulp.task('js-watch', ['js'], reload);
+
+gulp.task('index', ['sass','js'], function () {
     var target = gulp.src('app/index.html');
     var sourcearray = libs.concat(['app/app.js', 'app/css/*.css']);
     var sources = gulp.src(
