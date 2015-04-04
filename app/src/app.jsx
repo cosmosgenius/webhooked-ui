@@ -1,6 +1,6 @@
-export * from './hello.jsx';
+var Hello = require('./hello.jsx');
 
 React.render(
-    <h1>Hello, world</h1>,
+    <Hello></Hello>,
     document.getElementById("appview")
 );
