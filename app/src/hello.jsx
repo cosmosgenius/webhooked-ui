@@ -1,4 +1,14 @@
-React.render(
-    <h1>Hello, world</h1>,
-    document.getElementById("appview")
-);
+'use strict';
+var Hello = React.createClass({
+
+    render: function() {
+        return (
+            <div>
+                <h1>hello</h1>
+            </div>
+        );
+    }
+
+});
+
+module.exports = Hello;
