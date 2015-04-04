@@ -33,7 +33,7 @@ gulp.task('serve', ['sass','index'], function() {
 gulp.task('index', ['sass'], function () {
     var target = gulp.src('app/index.html');
     var sources = gulp.src(
-        ['app/app.js', 'app/css/*.css'],
+        ['app/js/app.js', 'app/css/*.css'],
         {read: false}
     );
 
