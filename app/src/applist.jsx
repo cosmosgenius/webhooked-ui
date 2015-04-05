@@ -12,7 +12,7 @@ var AppRow = React.createClass({
     render: function() {
         let tasks = this.props.app.tasks
                         .reduce((red,task) => {
-                            red.push(<li key={task}>{task}</li>);
+                            red.push(<li>{task}</li>);
                             return red;
                         },[]);
 
@@ -21,7 +21,7 @@ var AppRow = React.createClass({
                 <div className="card">
                     <h3>{this.props.app.name}</h3>
                     <h5>{this.props.app.path}</h5>
-                    <div><ul>{tasks}</ul></div>
+                    <div><ul>{this.props.app.tasks}</ul></div>
                     <div>{(new Date(this.props.app.modified_at)).toDateString()}</div>
                     <div>{(new Date(this.props.app.created_at)).toDateString()}</div>
                 </div>
@@ -32,10 +32,11 @@ var AppRow = React.createClass({
 
 var AppTable = React.createClass({
     render: function() {
-        var rows = [];
-        this.props.apps.forEach((app) => {
-            rows.push(<AppRow app={app} key={app.name} />);
-        });
+        let rows = this.props.apps
+                        .reduce((red,app) => {
+                            red.push(<AppRow app={app} key={app.name} />);
+                            return red;
+                        }, []);
         return (
             <div className="grid">{rows}</div>
         );
