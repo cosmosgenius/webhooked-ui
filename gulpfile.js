@@ -21,6 +21,7 @@ var src = {
 };
 
 var libs = [
+    'app/libs/jquery-2.1.3.js',
     'app/libs/react.js'
 ];
 
