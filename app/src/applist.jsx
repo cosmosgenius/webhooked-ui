@@ -20,8 +20,8 @@ var AppRow = React.createClass({
             <tr>
                 <td>{this.props.app.name}</td>
                 <td>{this.props.app.path}</td>
-                <td>{this.props.app.modified_at}</td>
-                <td>{this.props.app.created_at}</td>
+                <td>{(new Date(this.props.app.modified_at)).toDateString()}</td>
+                <td>{(new Date(this.props.app.created_at)).toDateString()}</td>
                 <td><ul>{tasks}</ul></td>
             </tr>
         );
