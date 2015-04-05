@@ -21,7 +21,7 @@ var AppRow = React.createClass({
                 <div className="card">
                     <h3>{this.props.app.name}</h3>
                     <h5>{this.props.app.path}</h5>
-                    <div><ul>{this.props.app.tasks}</ul></div>
+                    <div><ul>{tasks}</ul></div>
                     <div>{(new Date(this.props.app.modified_at)).toDateString()}</div>
                     <div>{(new Date(this.props.app.created_at)).toDateString()}</div>
                 </div>
