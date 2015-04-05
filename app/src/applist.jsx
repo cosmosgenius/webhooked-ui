@@ -10,13 +10,19 @@ var PageHeader = React.createClass({
 
 var AppRow = React.createClass({
     render: function() {
+        let tasks = this.props.app.tasks
+                        .reduce(function(red,task){
+                            red.push(<li>{task}</li>);
+                            return red
+                        },[]);
+
         return (
             <tr>
                 <td>{this.props.app.name}</td>
                 <td>{this.props.app.path}</td>
                 <td>{this.props.app.modified_at}</td>
                 <td>{this.props.app.created_at}</td>
-                <td>{this.props.app.tasks}</td>
+                <td><ul>{tasks}</ul></td>
             </tr>
         );
     }
