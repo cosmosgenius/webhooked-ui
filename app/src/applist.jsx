@@ -11,9 +11,9 @@ var PageHeader = React.createClass({
 var AppRow = React.createClass({
     render: function() {
         let tasks = this.props.app.tasks
-                        .reduce(function(red,task){
+                        .reduce((red,task) => {
                             red.push(<li>{task}</li>);
-                            return red
+                            return red;
                         },[]);
 
         return (
