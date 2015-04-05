@@ -17,13 +17,15 @@ var AppRow = React.createClass({
                         },[]);
 
         return (
-            <tr>
-                <td>{this.props.app.name}</td>
-                <td>{this.props.app.path}</td>
-                <td>{(new Date(this.props.app.modified_at)).toDateString()}</td>
-                <td>{(new Date(this.props.app.created_at)).toDateString()}</td>
-                <td><ul>{tasks}</ul></td>
-            </tr>
+            <a href="#">
+                <div className="card">
+                    <h3>{this.props.app.name}</h3>
+                    <h5>{this.props.app.path}</h5>
+                    <div><ul>{tasks}</ul></div>
+                    <div>{(new Date(this.props.app.modified_at)).toDateString()}</div>
+                    <div>{(new Date(this.props.app.created_at)).toDateString()}</div>
+                </div>
+            </a>
         );
     }
 });
@@ -35,18 +37,7 @@ var AppTable = React.createClass({
             rows.push(<AppRow app={app} key={app.name} />);
         });
         return (
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Path</th>
-                        <th>Modified at</th>
-                        <th>Created at</th>
-                        <th>Tasks</th>
-                    </tr>
-                </thead>
-                <tbody>{rows}</tbody>
-            </table>
+            <div className="grid">{rows}</div>
         );
     }
 });
