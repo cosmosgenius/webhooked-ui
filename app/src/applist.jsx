@@ -34,7 +34,7 @@ var AppTable = React.createClass({
     render: function() {
         var rows = [];
         this.props.apps.forEach(function(app) {
-            rows.push(<AppRow app={app} key={app.name} />);
+            rows.push(<AppRow app={app} />);
         });
         return (
             <div className="grid">{rows}</div>
