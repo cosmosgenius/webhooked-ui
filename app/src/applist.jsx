@@ -12,7 +12,7 @@ var AppRow = React.createClass({
     render: function() {
         let tasks = this.props.app.tasks
                         .reduce((red,task) => {
-                            red.push(<li>{task}</li>);
+                            red.push(<li key={task}>{task}</li>);
                             return red;
                         },[]);
 
@@ -33,8 +33,8 @@ var AppRow = React.createClass({
 var AppTable = React.createClass({
     render: function() {
         var rows = [];
-        this.props.apps.forEach(function(app) {
-            rows.push(<AppRow app={app} />);
+        this.props.apps.forEach((app) => {
+            rows.push(<AppRow app={app} key={app.name} />);
         });
         return (
             <div className="grid">{rows}</div>
