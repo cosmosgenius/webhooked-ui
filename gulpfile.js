@@ -77,7 +77,7 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(autoprefixer())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('app/css'))
         .pipe(reload({stream: true}));
 });
