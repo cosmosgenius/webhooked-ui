@@ -30,3 +30,4 @@ node_modules
 css/
 app/app.js
 app/data.json
+*.map

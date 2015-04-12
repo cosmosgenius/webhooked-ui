@@ -14,7 +14,7 @@ var reload = browserSync.reload;
 var PORT = 8888;
 
 var src = {
-    sass: 'app/scss/*.scss',
+    scss: 'app/scss/*.scss',
     css:  'app/css',
     js: ['app/src/**/*.js', 'app/src/**/*.jsx'],
     html: 'app/index.html'
@@ -36,7 +36,7 @@ gulp.task('serve', ['index'], function() {
             port: PORT-1
         }
     });
-    gulp.watch(src.sass, ['sass']);
+    gulp.watch(src.scss, ['sass']);
     gulp.watch(src.js, ['js-watch']);
     gulp.watch(src.html).on('change', reload);
 });
@@ -69,11 +69,13 @@ gulp.task('js', function() {
             .bundle()
             .pipe(source('app.js'))
             .pipe(buffer())
+            .pipe(sourcemaps.init({loadMaps: true}))
+            .pipe(sourcemaps.write('.'))
             .pipe(gulp.dest('app'));
 });
 
 gulp.task('sass', function() {
-    return gulp.src('app/scss/*.scss')
+    return gulp.src(src.scss)
         .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(autoprefixer())
