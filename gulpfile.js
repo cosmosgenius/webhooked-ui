@@ -85,5 +85,5 @@ gulp.task('sass', function() {
 });
 
 gulp.task('test', []);
-gulp.task('build', []);
+gulp.task('build', ['index']);
 gulp.task('default' ,['serve']);
