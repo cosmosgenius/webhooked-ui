@@ -1,3 +1,4 @@
+'use strict';
 var AppList = require('./applist.jsx');
 
 $.ajax('/data.json')

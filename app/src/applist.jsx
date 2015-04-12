@@ -1,6 +1,6 @@
 'use strict';
 
-var PageHeader = React.createClass({
+let PageHeader = React.createClass({
     render: function() {
         return (
             <h1>Apps</h1>
@@ -8,7 +8,7 @@ var PageHeader = React.createClass({
     }
 });
 
-var AppRow = React.createClass({
+let AppRow = React.createClass({
     render: function() {
         let tasks = this.props.app.tasks
                         .reduce((red,task) => {
@@ -30,7 +30,7 @@ var AppRow = React.createClass({
     }
 });
 
-var AppTable = React.createClass({
+let AppTable = React.createClass({
     render: function() {
         let rows = this.props.apps
                         .reduce((red,app) => {
@@ -43,7 +43,7 @@ var AppTable = React.createClass({
     }
 });
 
-var AppList = React.createClass({
+let AppList = React.createClass({
 
     render: function() {
         return (
