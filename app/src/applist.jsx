@@ -13,7 +13,7 @@ let AppRow = React.createClass({
         let tasks = this.props.app.tasks
                         .map((task) => {
                             return <li>{task}</li>;
-                        },[]);
+                        });
 
         return (
             <a href="#">
