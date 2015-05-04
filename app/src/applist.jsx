@@ -11,9 +11,8 @@ let PageHeader = React.createClass({
 let AppRow = React.createClass({
     render: function() {
         let tasks = this.props.app.tasks
-                        .reduce((red,task) => {
-                            red.push(<li>{task}</li>);
-                            return red;
+                        .map((task) => {
+                            return <li>{task}</li>;
                         },[]);
 
         return (
@@ -33,10 +32,9 @@ let AppRow = React.createClass({
 let AppTable = React.createClass({
     render: function() {
         let rows = this.props.apps
-                        .reduce((red,app) => {
-                            red.push(<AppRow app={app} key={app.name} />);
-                            return red;
-                        }, []);
+                        .map((app) => {
+                            return <AppRow app={app} key={app.name} />;
+                        });
         return (
             <div className="grid">{rows}</div>
         );
