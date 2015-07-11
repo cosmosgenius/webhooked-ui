@@ -3,7 +3,7 @@
 let SiteHeader = React.createClass({
     render: function() {
         return (
-            <header role="banner" className="fill-primary">
+            <header role="banner" className="fill-primary pad-1">
                 <h2 className="normal nospace push-h">Webhooked</h2>
             </header>
         );
@@ -13,8 +13,8 @@ let SiteHeader = React.createClass({
 let PageHeader = React.createClass({
     render: function() {
         return (
-            <section className="page-header">
-                <h1>Apps</h1>
+            <section className="page-header pad-1">
+                <h1 className="thin">Apps</h1>
             </section>
         );
     }
@@ -24,7 +24,7 @@ let AppRow = React.createClass({
     render: function() {
         let tasks = this.props.app.tasks
                         .map((task) => {
-                            return <li>{task}</li>;
+                            return <li><code>{task}</code></li>;
                         });
 
         return (
@@ -32,9 +32,8 @@ let AppRow = React.createClass({
                 <a className="card fill-white pad-1 push-1" href="#">
                     <h3 className="dark">{this.props.app.name}</h3>
                     <h5 className="dark">{this.props.app.path}</h5>
-                    <div className="mediumgray"><ul>{tasks}</ul></div>
-                    <div className="lightgray">{(new Date(this.props.app.modified_at)).toDateString()}</div>
-                    <div className="lightgray">{(new Date(this.props.app.created_at)).toDateString()}</div>
+                    <div className="mediumgray"><ol>{tasks}</ol></div>
+                    <date className="lightgray"> {(new Date(this.props.app.modified_at)).toDateString()}  {(new Date(this.props.app.created_at)).toDateString()}</date>
                 </a>
             </div>
         );
@@ -48,7 +47,7 @@ let AppTable = React.createClass({
                             return <AppRow app={app} key={app.name} />;
                         });
         return (
-            <div className="grid">{rows}</div>
+            <div className="grid pad-1">{rows}</div>
         );
     }
 });
