@@ -1,6 +1,28 @@
+@import "theme";
+@import "layout";
+@import "typography";
+
+* {
+    box-sizing: border-box;
+}
 body {
     background-color: #EFEFEF;
 }
 header[role="banner"] {
-    background-color: red;
+    h2 {
+        font-size: 1.2em;
+    }
+}
+.card-wrapper {
+    width: 25%;
+    float: left;
+}
+a.card {
+    display: block;
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    border-radius: 0.3em;
+    text-decoration: none;
+    h3 {
+        margin: 0;
+    }
 }
