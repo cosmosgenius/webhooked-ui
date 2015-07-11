@@ -1,9 +1,21 @@
 'use strict';
 
+let SiteHeader = React.createClass({
+    render: function() {
+        return (
+            <header role="banner" className="fill-primary pad-1">
+                <h2 className="normal nospace push-h">Webhooked</h2>
+            </header>
+        );
+    }
+});
+
 let PageHeader = React.createClass({
     render: function() {
         return (
-            <h1>Apps</h1>
+            <section className="page-header pad-1">
+                <h1 className="thin">Apps</h1>
+            </section>
         );
     }
 });
@@ -12,19 +24,18 @@ let AppRow = React.createClass({
     render: function() {
         let tasks = this.props.app.tasks
                         .map((task) => {
-                            return <li>{task}</li>;
+                            return <li><code>{task}</code></li>;
                         });
 
         return (
-            <a href="#">
-                <div className="card">
-                    <h3>{this.props.app.name}</h3>
-                    <h5>{this.props.app.path}</h5>
-                    <div><ul>{tasks}</ul></div>
-                    <div>{(new Date(this.props.app.modified_at)).toDateString()}</div>
-                    <div>{(new Date(this.props.app.created_at)).toDateString()}</div>
-                </div>
-            </a>
+            <div className="card-wrapper pad-h push-1-bottom">
+                <a className="card fill-white pad-1 push-1" href="#">
+                    <h3 className="primary medium">{this.props.app.name}</h3>
+                    <h5 className="dark">{this.props.app.path}</h5>
+                    <div className="primary"><ol className="fill-dark">{tasks}</ol></div>
+                    <date className="lightgray text-right">modified: {(new Date(this.props.app.modified_at)).toDateString()}, created: {(new Date(this.props.app.created_at)).toDateString()}</date>
+                </a>
+            </div>
         );
     }
 });
@@ -36,7 +47,7 @@ let AppTable = React.createClass({
                             return <AppRow app={app} key={app.name} />;
                         });
         return (
-            <div className="grid">{rows}</div>
+            <div className="grid pad-h">{rows}</div>
         );
     }
 });
@@ -46,6 +57,7 @@ let AppList = React.createClass({
     render: function() {
         return (
             <div>
+                <SiteHeader />
                 <PageHeader />
                 <AppTable apps={this.props.apps} />
             </div>
