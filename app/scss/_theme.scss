@@ -1,4 +1,7 @@
 $primary: #69C673;
+$primary-medium: #AEE2B4;
+$primary-light: #EAF2EB;
+
 $light: #f0f5f7;
 $dark: #333333;
 $mediumgray: #4e585a;
@@ -11,3 +14,4 @@ $lightgray: #a9acb4;
 .dark           { color: $dark; }
 .mediumgray     { color: $mediumgray; }
 .lightgray      { color: $lightgray; }
+.primary        { color: $primary; }

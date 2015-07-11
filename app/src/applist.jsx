@@ -30,10 +30,10 @@ let AppRow = React.createClass({
         return (
             <div className="card-wrapper pad-h push-1-bottom">
                 <a className="card fill-white pad-1 push-1" href="#">
-                    <h3 className="dark">{this.props.app.name}</h3>
+                    <h3 className="primary medium">{this.props.app.name}</h3>
                     <h5 className="dark">{this.props.app.path}</h5>
                     <div className="mediumgray"><ol>{tasks}</ol></div>
-                    <date className="lightgray"> {(new Date(this.props.app.modified_at)).toDateString()}  {(new Date(this.props.app.created_at)).toDateString()}</date>
+                    <date className="lightgray text-right">modified: {(new Date(this.props.app.modified_at)).toDateString()}, created: {(new Date(this.props.app.created_at)).toDateString()}</date>
                 </a>
             </div>
         );
@@ -47,7 +47,7 @@ let AppTable = React.createClass({
                             return <AppRow app={app} key={app.name} />;
                         });
         return (
-            <div className="grid pad-1">{rows}</div>
+            <div className="grid pad-h">{rows}</div>
         );
     }
 });
