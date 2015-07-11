@@ -1,0 +1,28 @@
+{
+  "name": "webhooked-ui",
+  "version": "0.0.1",
+  "homepage": "https://github.com/cosmosgenius/webhooked-ui",
+  "authors": [
+    "Sharat M R <cosmosgenius@gmail.com>",
+    "Praseetha-KR <voidimagineer@yahoo.com>"
+  ],
+  "description": "Frontend for webhooked",
+  "main": "index.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "webhooked"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "~3.0.3"
+  }
+}
