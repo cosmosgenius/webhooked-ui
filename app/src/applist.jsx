@@ -3,7 +3,10 @@
 let PageHeader = React.createClass({
     render: function() {
         return (
-            <h1>Apps</h1>
+            <header role="banner">
+                <h1>Apps</h1>
+
+            </header>
         );
     }
 });

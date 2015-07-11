@@ -22,7 +22,9 @@ var src = {
 
 var libs = [
     'app/libs/jquery-2.1.3.js',
-    'app/libs/react.js'
+    'app/libs/react.js',
+    'app/libs/normalize.css',
+    //'bower_components/normalize-css/normalize.css'
 ];
 
 gulp.task('serve', ['index'], function() {
