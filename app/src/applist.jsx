@@ -32,7 +32,7 @@ let AppRow = React.createClass({
                 <a className="card fill-white pad-1 push-1" href="#">
                     <h3 className="primary medium">{this.props.app.name}</h3>
                     <h5 className="dark">{this.props.app.path}</h5>
-                    <div className="mediumgray"><ol>{tasks}</ol></div>
+                    <div className="primary"><ol className="fill-dark">{tasks}</ol></div>
                     <date className="lightgray text-right">modified: {(new Date(this.props.app.modified_at)).toDateString()}, created: {(new Date(this.props.app.created_at)).toDateString()}</date>
                 </a>
             </div>

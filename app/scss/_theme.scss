@@ -3,13 +3,14 @@ $primary-medium: #AEE2B4;
 $primary-light: #EAF2EB;
 
 $light: #f0f5f7;
-$dark: #333333;
+$dark: #23252F;
 $mediumgray: #4e585a;
 $lightgray: #a9acb4;
 
 .fill-primary   { background-color: $primary; }
 .fill-white     { background-color: white; }
 .fill-light     { background-color: $light; }
+.fill-dark     { background-color: $dark; }
 
 .dark           { color: $dark; }
 .mediumgray     { color: $mediumgray; }
