@@ -1,5 +1,7 @@
 # Webhooked UI
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/cosmosgenius/webhooked-ui.svg)](https://greenkeeper.io/)
+
 The UI for the webhooked project
 
 [![Build status][travis-image]][travis-url]
